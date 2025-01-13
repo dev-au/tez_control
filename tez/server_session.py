@@ -1,8 +1,9 @@
-import os
+import os, pyfiglet
 
 from fabric import Connection
 from invoke import UnexpectedExit
 from termcolor import colored
+
 
 from .handlers import action_custom_command
 from .colored_print import colored_print
