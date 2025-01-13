@@ -10,7 +10,7 @@ Tez Control is a command-line tool that allows users to interact with and contro
   
 ## Installation
 
-You can install `tez_control` via pip:
+You can install `tez-control` via pip:
 
 ```bash
 pip install tez_control
@@ -20,7 +20,7 @@ pip install tez_control
 
 ### Entering the Real Server
 
-Once you have `tez_control` installed, you can connect to a remote server with the following command:
+Once you have `tez-control` installed, you can connect to a remote server with the following command:
 
 ```bash
 tez sv
@@ -39,7 +39,7 @@ tez ex
 ```
 ### Configuration File (`.tez`)
 
-`tez_control` uses a `.tez` configuration file to store connection details and project settings. The default location for this file is your home directory (`~/.tez`). Below is an example of what the file should look like:
+`tez-control` uses a `.tez` configuration file to store connection details and project settings. The default location for this file is your home directory (`~/.tez`). Below is an example of what the file should look like:
 
 ```ini
 [server]
@@ -60,7 +60,7 @@ Make sure to adjust the values for your specific server and project configuratio
 
 ## Contributing
 
-If you'd like to contribute to `tez_control`, feel free to fork the repository and create pull requests. We welcome improvements, bug fixes, and new features.
+If you'd like to contribute to `tez-control`, feel free to fork the repository and create pull requests. We welcome improvements, bug fixes, and new features.
 
 ## License
 
@@ -72,6 +72,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Entering the Real Server**: Describes how users can use the `tez sv` command to connect to a remote server interactively.
 - **.tez Configuration File**: Generate example with `tez ex`
   
-This `README.md` should help guide users in installing, configuring, and using `tez_control` effectively.
+This `README.md` should help guide users in installing, configuring, and using `tez-control` effectively.
 
 Let me know if you'd like further adjustments!
