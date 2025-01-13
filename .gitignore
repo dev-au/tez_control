@@ -2,3 +2,5 @@
 tez_control.egg-info/
 .idea/
 dist/
+.DS_Store/
+__pycache__/
