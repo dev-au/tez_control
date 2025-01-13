@@ -1,8 +1,8 @@
 import configparser
 import os, sys
 
-from .sources.schemas import Tez, Server, Project
-from .sources.colored_print import colored_print
+from .schemas import Tez, Server, Project
+from .colored_print import colored_print
 
 
 

@@ -1,0 +1,4 @@
+termcolor==2.5.0
+pyfiglet==1.0.2
+fabric==3.2.2
+invoke==2.2.0

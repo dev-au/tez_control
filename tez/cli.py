@@ -6,7 +6,7 @@ from termcolor import colored
 from .config import settings
 from .handlers import action_custom_command
 from .server_session import enter_live_server
-from .sources.colored_print import colored_print
+from .colored_print import colored_print
 from .genete_example import generate_local_config
 
 

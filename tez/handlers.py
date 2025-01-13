@@ -1,7 +1,7 @@
 from fabric import Connection
 
 from .config import settings
-from .sources.colored_print import colored_print
+from .colored_print import colored_print
 
 
 def action_custom_command(terminal_command: str, server=None) -> str:

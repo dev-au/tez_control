@@ -6,7 +6,7 @@ from termcolor import colored
 
 from .config import settings
 from .handlers import action_custom_command
-from .sources.colored_print import colored_print
+from .colored_print import colored_print
 
 
 def enter_live_server():

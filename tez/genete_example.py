@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 from .config import settings
-from .sources.colored_print import colored_print
+from .colored_print import colored_print
 
 
 def generate_local_config():
