@@ -13,7 +13,7 @@ Tez Control is a command-line tool that allows users to interact with and contro
 You can install `tez-control` via pip:
 
 ```bash
-pip install tez_control
+pip install tez-control
 ```
 
 ## Usage
