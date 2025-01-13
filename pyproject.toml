@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel", "click", "fabric", "pyfiglet", "termcolor", "invoke"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tez_control"
+version = "0.1.0"
+description = "A command-line tool for controlling the Tez project"
+long_description = "file: README.md"
+long_description_content_type = "text/markdown"
+author = "Abdulloh Umar"
+author_email = "devau.businness@gmail.com"
+url = "https://github.com/dev-au/tez_control"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+python_requires = ">=3.6"
+
+[tool.setuptools]
+packages = ["tez"]
+
+[project.scripts]
+tez = "tez.cli:main"
