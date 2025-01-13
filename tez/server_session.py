@@ -29,13 +29,14 @@ def enter_live_server(settings):
             # Get initial directory
             current_path = conn.run("pwd", hide=True).stdout.strip()
             os.system('clear')
-            colored_print(pyfiglet.figlet_format(f'Success'), 'green')
+            r = pyfiglet.figlet_format(f'Success')
+            colored_print(r, 'green')
 
             while True:
                 try:
                     command_input = input(colored(f"{server_user}@{server_host}:{current_path}> ", 'cyan'))
                     if command_input.lower() in ("q", "exit"):
-                        colored_print('Exited Chittak server', 'red')
+                        colored_print('Exited Tez server', 'red')
                         break
                     elif command_input.lower() == "clear":
                         os.system('clear')
@@ -63,7 +64,7 @@ def enter_live_server(settings):
                 except KeyboardInterrupt:
                     colored_print("\nCommand canceled (Ctrl+C)", "yellow")
                 except EOFError:
-                    colored_print("\nExited Chittak server (Ctrl+D)", "red")
+                    colored_print("\nExited Tez server (Ctrl+D)", "red")
                     continue
 
     except Exception as e:

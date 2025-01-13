@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tez_control"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
     "termcolor==2.5.0",
     "pyfiglet==1.0.2",
