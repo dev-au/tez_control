@@ -27,7 +27,7 @@ def main():
     handler = settings.commands.get(args.command, None)
     if handler:
         try:
-            action_custom_command(handler, settings=settings)
+            action_custom_command(f"cd {settings.project.path} && {handler}", settings=settings)
         except UnexpectedExit:
             pass
 

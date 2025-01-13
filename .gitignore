@@ -4,3 +4,4 @@ tez_control.egg-info/
 dist/
 .DS_Store
 __pycache__/
+.tez
