@@ -1,18 +1,18 @@
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 
 @dataclass
 class Server:
-    host: str
-    port: int
-    user: str
-    password: str
+    host: Optional[str]
+    port: Optional[int]
+    user: Optional[str]
+    password: Optional[str]
 
 
 @dataclass
 class Project:
-    path: str
+    path: Optional[str]
 
 
 

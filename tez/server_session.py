@@ -4,12 +4,11 @@ from fabric import Connection
 from invoke import UnexpectedExit
 from termcolor import colored
 
-from .config import settings
 from .handlers import action_custom_command
 from .colored_print import colored_print
 
 
-def enter_live_server():
+def enter_live_server(settings):
     """
     Connects to the server, provides an interactive shell experience, and allows directory navigation,
     command execution, and other shell commands like clear and exit.
@@ -43,14 +42,16 @@ def enter_live_server():
                     elif command_input.startswith("cd "):
                         new_dir = command_input.split(' ', 1)[1]
                         try:
-                            test_dir = conn.run(f"cd {os.path.join(current_path, new_dir)} && pwd", hide=True).stdout.strip()
+                            test_dir = conn.run(f"cd {os.path.join(current_path, new_dir)} && pwd",
+                                                hide=True).stdout.strip()
                             current_path = test_dir
                         except UnexpectedExit:
                             colored_print(f"Directory not found: {new_dir}", "red")
                         continue
                     terminal_command = settings.commands.get(command_input)
                     if terminal_command:
-                        action_custom_command(f"cd {settings.project.path} && {terminal_command}", conn)
+                        action_custom_command(f"cd {settings.project.path} && {terminal_command}", settings=settings,
+                                              server=conn)
                     else:
                         try:
                             result = conn.run(f"cd {current_path} && {command_input}", hide=True)
@@ -66,4 +67,3 @@ def enter_live_server():
 
     except Exception as e:
         colored_print(f"Error connecting to the server: {e}", 'red')
-

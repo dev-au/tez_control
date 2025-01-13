@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
-from .config import settings
 from .colored_print import colored_print
+from .config import load_config
 
 
 def generate_local_config():
@@ -9,7 +9,6 @@ def generate_local_config():
     Generates the .tez configuration file in the home directory
     and writes the provided configuration for the server and project.
     """
-    config = settings
 
     # Path to the home directory
     home_dir = Path(os.getcwd())

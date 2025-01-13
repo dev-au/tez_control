@@ -3,7 +3,7 @@ import argparse
 from invoke import UnexpectedExit
 from termcolor import colored
 
-from .config import settings
+from .config import load_config
 from .handlers import action_custom_command
 from .server_session import enter_live_server
 from .colored_print import colored_print
@@ -12,13 +12,14 @@ from .genete_example import generate_local_config
 
 def main():
     parser = argparse.ArgumentParser(description="Project Commands")
+    settings = load_config()
     choices = list(settings.commands.keys())
     choices.append('sv')
     choices.append('ex')
     parser.add_argument("command", choices=choices, help="Command to execute")
     args = parser.parse_args()
     if args.command == 'sv':
-        enter_live_server()
+        enter_live_server(settings)
         return
     if args.command == 'ex':
         generate_local_config()
@@ -26,7 +27,7 @@ def main():
     handler = settings.commands.get(args.command, None)
     if handler:
         try:
-            action_custom_command(handler)
+            action_custom_command(handler, settings=settings)
         except UnexpectedExit:
             pass
 

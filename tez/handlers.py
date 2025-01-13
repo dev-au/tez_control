@@ -1,13 +1,14 @@
 from fabric import Connection
 
-from .config import settings
+from .config import load_config
 from .colored_print import colored_print
 
 
-def action_custom_command(terminal_command: str, server=None) -> str:
+def action_custom_command(terminal_command: str, settings=None, server=None):
     """
     Connects to the server, and do given commands
     """
+    settings = settings if settings else load_config()
     server_host = settings.server.host
     server_user = settings.server.user
     server_password = settings.server.password
