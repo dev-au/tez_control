@@ -28,8 +28,11 @@ SERVER_PORT=
 [project]
 PROJECT_PATH=
 
-[commands]
-view=dir
+[local-commands]
+view=ls
+
+[server-commands]
+s=ls
     """
 
     # Write to .tez file
