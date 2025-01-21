@@ -5,7 +5,7 @@ from invoke import UnexpectedExit
 from termcolor import colored
 
 
-from .handlers import action_custom_command
+from .handlers import action_custom_server_command
 from .colored_print import colored_print
 
 
@@ -52,7 +52,7 @@ def enter_live_server(settings):
                         continue
                     terminal_command = settings.commands.get(command_input)
                     if terminal_command:
-                        action_custom_command(f"cd {settings.project.path} && {terminal_command}", settings=settings,
+                        action_custom_server_command(f"cd {settings.project.path} && {terminal_command}", settings=settings,
                                               server=conn)
                     else:
                         try:

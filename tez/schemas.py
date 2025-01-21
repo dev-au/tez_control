@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Callable
 
 
 @dataclass
@@ -20,4 +20,5 @@ class Project:
 class Tez:
     server: Server
     project: Project
-    commands: Dict[str, str]
+    server_commands: Dict[str, str]
+    local_commands: Dict[str, 10]
