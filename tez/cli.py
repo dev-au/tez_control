@@ -28,7 +28,7 @@ def main():
     local_handler = settings.local_commands.get(args.command, None)
     if server_handler:
         try:
-            action_custom_server_command(f"cd {settings.project.path} && {handler}", settings=settings)
+            action_custom_server_command(f"cd {settings.project.path} && {server_handler}", settings=settings)
         except UnexpectedExit:
             pass
     

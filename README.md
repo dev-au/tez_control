@@ -6,7 +6,8 @@ Tez Control is a command-line tool that allows users to interact with and contro
 
 - **Connect to Real Server**: Enter and interact with a remote server directly from your terminal.
 - **Generate Configuration Files**: Automatically generate configuration files like `.service` and `nginx.conf` for your project.
-- **Run Custom Commands**: Execute commands on the server as per your project needs.
+- **Run Custom Commands On Server**: Execute commands on the server as per your project needs.
+- **Run Custom Commands On Local**: Execute commands on the current local path.
   
 ## Installation
 
@@ -51,9 +52,12 @@ SERVER_PORT=22
 [project]
 PROJECT_PATH=/path/project
 
-[commands]
+[server-commands]
 restart=git pull && sudo systemctl restart my_project
-view=dir
+pull=git pull
+
+[local-commands]
+push=git add . && git commit -m 'Update Project' && git push
 ```
 
 Make sure to adjust the values for your specific server and project configuration.
