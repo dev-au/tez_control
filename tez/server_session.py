@@ -50,7 +50,7 @@ def enter_live_server(settings):
                         except UnexpectedExit:
                             colored_print(f"Directory not found: {new_dir}", "red")
                         continue
-                    terminal_command = settings.commands.get(command_input)
+                    terminal_command = settings.server_commands.get(command_input)
                     if terminal_command:
                         action_custom_server_command(f"cd {settings.project.path} && {terminal_command}", settings=settings,
                                               server=conn)
