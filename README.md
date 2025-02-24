@@ -31,9 +31,6 @@ This will prompt you to enter your server's host, user, and password (configured
 
 You can navigate directories, run commands, and even cancel a command with `Ctrl+C`. Type `exit` to disconnect from the server.
 
-### Generate Configuration Files
-
-You can generate required configuration files (like `.service` and `nginx.conf`) for your project by running:
 
 ```bash
 tez ex
@@ -57,9 +54,10 @@ restart=git pull && sudo systemctl restart my_project
 pull=git pull
 
 [local-commands]
-push=git add . && git commit -m 'Update Project' && git push
+push=git add . && git commit -m '$1' && git push
 ```
 
+In this commands have numbers with $ this char. When you use that you can receive dynamic attributes, strings everything that you can give
 Make sure to adjust the values for your specific server and project configuration.
 
 ## Contributing
