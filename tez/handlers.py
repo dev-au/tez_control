@@ -25,9 +25,6 @@ def action_custom_server_command(terminal_command: str, settings=None, server=No
 
 
 def action_custom_local_command(terminal_command: str, settings=None, server=None):
-    """
-    Executes a local shell command.
-    """
     result = subprocess.run(terminal_command, shell=True, capture_output=True, text=True)
     if result.stdout:
         colored_print(result.stdout.strip(), 'green')
