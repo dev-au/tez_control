@@ -10,10 +10,12 @@ from .server_session import enter_live_server
 from .colored_print import colored_print
 from .genete_example import generate_local_config
 
+
 def replace_placeholders(command, args):
     for i, arg in enumerate(args, start=1):
-        command = re.sub(rf"\${i}\b", arg, command)
+        command = re.sub(rf"\${i}\b", f'"{arg}"', command)
     return command
+
 
 def main():
     parser = argparse.ArgumentParser(description="Project Commands")
@@ -62,6 +64,7 @@ def main():
         message = f'Command "{cmd_key}" not found'
         colored_message = colored(message, 'red', attrs=['bold'])
         print(colored_message)
+
 
 if __name__ == '__main__':
     main()
