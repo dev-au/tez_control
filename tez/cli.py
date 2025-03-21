@@ -1,5 +1,6 @@
 import argparse
 import re
+import shlex
 from invoke import UnexpectedExit
 from termcolor import colored
 
@@ -10,9 +11,8 @@ from .colored_print import colored_print
 from .genete_example import generate_local_config
 
 def replace_placeholders(command, args):
-    """Replace $1, $2, ... in the command with actual arguments."""
     for i, arg in enumerate(args, start=1):
-        command = re.sub(rf"\${i}\b", arg, command)  # Replace placeholders
+        command = re.sub(rf"\${i}\b", arg, command)
     return command
 
 def main():
@@ -22,8 +22,11 @@ def main():
     parser.add_argument("command", nargs='+', help="Command to execute")
     args = parser.parse_args()
 
-    cmd_key = args.command[0]  # First argument is the command key
-    cmd_args = args.command[1:]  # Remaining arguments
+    full_command = " ".join(args.command)
+    parsed_command = shlex.split(full_command)
+
+    cmd_key = parsed_command[0]
+    cmd_args = parsed_command[1:]
 
     if cmd_key == 'sv':
         enter_live_server(settings)
